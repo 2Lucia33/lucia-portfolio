@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3efdf">
+  <meta name="description" content="片场失控 2D 原型：走进片场，做出你的导演决定。">
+  <title>片场失控 · 2D 片场原型</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='8' width='26' height='21' rx='3' fill='%23344d47'/%3E%3Cpath d='M3 8h26M8 3l4 5m6-5 4 5' stroke='%23d6b86b' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <a class="back" href="../../index.html#games">↖ Lucia 的作品集</a>
+      <span class="edition">PLAYABLE SKETCH / 01</span>
+      <a href="../filmset-chaos/index.html">文字版 ↗</a>
+    </header>
+    <main>
+      <div class="title-row"><div><p class="eyebrow">A LITTLE CHAOS, A GOOD STORY.</p><h1>片场失控<span>导演，请就位。</span></h1></div><span class="stamp">2D 原型<br>第一场 · 重逢</span></div>
+      <section class="metrics" aria-label="片场资源">
+        <div class="metric"><span>01 / 时间</span><strong id="stat-time">100</strong><progress id="bar-time" max="100" value="100" aria-label="剩余时间"></progress></div>
+        <div class="metric"><span>02 / 预算</span><strong id="stat-budget">100</strong><progress id="bar-budget" max="100" value="100" aria-label="剩余预算"></progress></div>
+        <div class="metric"><span>03 / 演员状态</span><strong id="stat-acting">55</strong><progress id="bar-acting" max="100" value="55" aria-label="演员状态"></progress></div>
+        <div class="metric"><span>04 / 成片质量</span><strong id="stat-quality">45</strong><progress id="bar-quality" max="100" value="45" aria-label="成片质量"></progress></div>
+      </section>
+      <div class="workspace">
+        <section class="set-panel" aria-label="可互动的片场">
+          <div class="set-heading"><span><i class="live-dot"></i> 第 01 场 / 旧车站</span><button id="pause" type="button" disabled>暂停</button></div>
+          <div class="canvas-wrap"><canvas id="world" width="960" height="640" tabindex="0" aria-label="片场。方向键或 WASD 移动，E 或空格与附近人物互动。也可点击场景或使用旁边的片场清单。">浏览器不支持 Canvas。你仍可使用片场清单完成决策，或体验文字版。</canvas><div id="scene-caption" class="scene-caption" hidden></div><div id="pause-cover" class="pause-cover" hidden>片场休息中<button id="resume" type="button">继续拍摄</button></div></div>
+          <div class="stage-footer"><p id="movement-hint">点击地面走动，点击「！」走近互动</p><button id="interact" type="button" disabled>靠近人物互动 <kbd>E</kbd></button></div>
+          <p class="feedback" id="feedback" role="status">准备好了吗？今天，你是现场导演。</p>
+        </section>
+        <aside class="call-sheet">
+          <p class="eyebrow">DIRECTOR'S CALL SHEET</p><h2>今日通告</h2><p class="brief">一封迟来的信，一次克制的重逢。<br>让两个人物，重新走近。</p>
+          <div class="task-title"><h3>片场待办</h3><span id="task-count">0 / 5</span></div>
+          <p class="task-help">点清单可直接处理；也可以走过去聊聊。</p><div id="tasks" class="tasks"></div>
+          <button class="primary film-button" id="shoot" type="button" disabled>处理 5 件待办后开拍</button>
+          <div class="instructions"><strong>怎么当导演？</strong><p>电脑：WASD / 方向键移动，E 互动。<br>手机：点地面移动，点人物互动。<br>走动不扣时间；每次决定才消耗资源。</p></div>
+          <p class="pencil-note">“意外是常态，<br>决定才是你的作品。”</p>
+        </aside>
+      </div>
+      <footer><span>一场戏 · 五个决定 · 约 3–5 分钟</span><span>原型阶段 / 无需安装 / 暂不保存进度</span></footer>
+    </main>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <noscript><div class="no-script">请启用 JavaScript 体验 2D 片场。</div></noscript>
+</body>
+</html>
