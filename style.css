@@ -53,3 +53,5 @@
 
 /* Contact links */
 .contact-details{display:flex;flex-direction:column;gap:12px;max-width:100%}.contact-details .contact-button{overflow-wrap:anywhere;min-width:0}
+
+.script-excerpt h5{font-size:1.05em;line-height:1.8;margin:1.5em 0 1em}.script-excerpt h5:first-child{margin-top:0}.script-excerpt .script-speaker{font-weight:600;margin-bottom:.15em}
